@@ -95,7 +95,8 @@ def p_long_operand_list(p):
     
 def p_instruction(p):
     '''instruction : OPCODE CONDITION operand_list
-                    | OPCODE operand_list'''
+                    | OPCODE operand_list
+                    | OPCODE operand'''
     if len(p) > 4:
         p[0] = Instruction(p[1], p[3], p[2])
     else:
