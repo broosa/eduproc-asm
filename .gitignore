@@ -1,0 +1,13 @@
+bin/*
+build/*
+*.o
+*~
+*.out
+*.swp
+EduProc.project
+EduProc.workspace
+.codelite
+
+bin/*
+.cproject
+.project
