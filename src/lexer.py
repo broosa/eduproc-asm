@@ -3,7 +3,7 @@ import ply.lex as lex
 tokens = (
     #Punctuation
     'COMMENT',
-    'INSTRUCTION',
+    'OPCODE',
     'CONDITION',
     'COMMA',
     'DOT',
@@ -24,7 +24,7 @@ tokens = (
 
 t_ignore = ' \t'
 
-t_ignore_COMMA = r','
+t_COMMA = r','
 
 t_LBRACKET = r'\['
 t_RBRACKET = r'\]'
@@ -49,7 +49,7 @@ def t_LITERAL(t):
     t.value = int(t.value[1:])
     return t
 
-def t_INSTRUCTION(t):
+def t_OPCODE(t):
     r'[a-zA-Z]+(?=[\s\.])'
     t.value = t.value.lower()
     return t
@@ -71,12 +71,12 @@ def t_error(t):
     
 lexer = lex.lex()
 
-data = """add.eq r1, r3
-sub r2, [$mem]
-add r2, #3"""
+#data = """add.eq r1, r3
+#sub r2, [$mem]
+#add r2, #3"""
 
-lexer.input(data)
+#lexer.input(data)
 
-for tok in lexer:
-    print(tok)
+#for tok in lexer:
+#    print(tok)
     

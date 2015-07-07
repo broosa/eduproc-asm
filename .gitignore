@@ -8,6 +8,11 @@ EduProc.project
 EduProc.workspace
 .codelite
 
+#lex/yacc output
+src/*.pyc
+src/parstab*
+src/parser.out
+
 bin/*
 .cproject
 .project
